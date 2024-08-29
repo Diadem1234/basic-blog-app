@@ -32,3 +32,8 @@
 9. **Add routes to web.php**
 10. **Run and test the application through http://127.0.0.1:8000**
     ``` php artisan serve ```
+
+### Challenges
+1. **Connecting the project to MySQL database**
+2. **Forgot to put fields in fillables in Post model**
+
