@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Middleware\AdminMiddleware;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,8 +22,12 @@ Route::middleware(['auth'])->prefix('posts')->name('posts.')->group(function () 
 });
 
 Auth::routes();
-Route::resource('admin/posts', AdminPostController::class)->names('admin.posts');
-Route::resource('admin/users', AdminUserController::class)->names('admin.users');
-Route::get('admin/{post}/confirm', [AdminPostController::class, 'confirm_delete'])->name('admin.posts.confirm');
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::resource('admin/posts', AdminPostController::class)->names('admin.posts');
+    Route::resource('admin/users', AdminUserController::class)->names('admin.users');
+    Route::get('admin/{user}/confirm', [AdminUserController::class, 'confirm_delete'])->name('admin.users.confirm');
+    Route::get('admin/{post}/confirm', [AdminPostController::class, 'confirm_delete'])->name('admin.posts.confirm');
+    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
