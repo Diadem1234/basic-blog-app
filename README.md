@@ -26,3 +26,9 @@
 5. **Create Post Controller, Model, Factory and Seeder**
     ``` php artisan make:model Post --migration --controller --factory ```
 6. **Run Migrations and Seed database**
+7. **Create views for app layout, create, delete, edit, list and show post.**
+     Create "Delete confirmation view"
+8. **Create Create, Read, Update & Delete functions for Post Controller.**
+9. **Add routes to web.php**
+10. **Run and test the application through http://127.0.0.1:8000**
+    ``` php artisan serve ```
