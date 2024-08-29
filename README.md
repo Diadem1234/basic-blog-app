@@ -42,4 +42,12 @@
     MONGODB_HOST=127.0.0.1
     MONGODB_PORT=27017
     MONGODB_DATABASE=laravel_project
+    ``` \
+    Add this to your database.php, under 'connection' field.
+    ```
+    'mongodb' => [
+    'driver'    => 'mongodb',
+    'dsn'       => env('MONGODB_CONNECTION').'://'.env('MONGODB_HOST').':'.env('MONGODB_PORT'),
+    'database'  => env('MONGODB_DATABASE'),
+    ],
     ```
