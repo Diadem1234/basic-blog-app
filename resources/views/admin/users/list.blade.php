@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>Posts</h1>
-    <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">Add Post</a>
+    <h1>Users</h1>
+    <a href="{{ route('admin.users.create') }}" class="btn btn-primary mb-3">Add User</a>
     
     @if(session('success'))
         <div class="alert alert-success">
@@ -19,13 +19,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($posts as $post)
+            @foreach($users as $user)
                 <tr>
-                    <td>{{ $post->title }}</td>
+                    <td>{{ $user->title }}</td>
                     <td>
-                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">Show</a>
-                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('posts.confirm', $post->id) }}" method="GET" style="display:inline;">
+                        <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-success btn-sm">Show</a>
+                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('admin.users.confirm', $user->id) }}" method="GET" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>

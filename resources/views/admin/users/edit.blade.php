@@ -4,19 +4,23 @@
     <div class="container">
         <h1>Edit Post</h1>
 
-        <form action="{{ route('posts.update', $post->id) }}" method="POST">
+        <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}" required>
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $user->name) }}" required>
             </div>
             <div class="form-group">
-                <label for="body">Content</label>
-                <textarea class="form-control" id="body" name="body" rows="5" required>{{ old('body', $post->body) }}</textarea>
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ old('name', $user->email) }}" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" value="{{ old('password', $user->password) }}" required>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('posts.index') }}" class="btn btn-secondary">Back</a>
+            <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Back</a>
         </form>
     </div>
 @endsection

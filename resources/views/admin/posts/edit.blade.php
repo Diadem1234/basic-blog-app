@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Edit Post</h1>
 
-        <form action="{{ route('posts.update', $post->id) }}" method="POST">
+        <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -16,7 +16,7 @@
                 <textarea class="form-control" id="body" name="body" rows="5" required>{{ old('body', $post->body) }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('posts.index') }}" class="btn btn-secondary">Back</a>
+            <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Back</a>
         </form>
     </div>
 @endsection

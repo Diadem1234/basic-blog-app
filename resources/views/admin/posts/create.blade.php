@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Create Post</h1>
 
-        <form action="{{ route('posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
@@ -15,7 +15,7 @@
                 <textarea class="form-control" id="body" name="body" rows="5" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
-            <a type="submit" href="/posts" class="btn btn-alert">Back</a>
+            <a type="submit" href="/admin/posts" class="btn btn-alert">Back</a>
         </form>
     </div>
 @endsection

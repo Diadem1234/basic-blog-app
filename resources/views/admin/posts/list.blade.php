@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Posts</h1>
-    <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">Add Post</a>
+    <a href="{{ route('admin.posts.create') }}" class="btn btn-primary mb-3">Add Post</a>
     
     @if(session('success'))
         <div class="alert alert-success">
@@ -23,9 +23,9 @@
                 <tr>
                     <td>{{ $post->title }}</td>
                     <td>
-                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">Show</a>
-                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('posts.confirm', $post->id) }}" method="GET" style="display:inline;">
+                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-success btn-sm">Show</a>
+                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('admin.posts.confirm', $post->id) }}" method="GET" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
