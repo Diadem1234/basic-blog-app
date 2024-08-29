@@ -13,4 +13,8 @@ class Post extends Model
         "title",
         "body",
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s'
+    ];
 }

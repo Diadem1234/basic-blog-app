@@ -76,3 +76,9 @@
     ```
 
 19. **Added Create, Read, Update & Delete functions in Users & Post controllers** 
+
+20. **Install Laravel Sanctum for API** \
+    Using this command. \
+    ```
+    php artisan install:api
+    ```
