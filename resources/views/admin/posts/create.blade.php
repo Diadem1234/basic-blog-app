@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Post</h1>
-
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1>Create Post</h1>
+        </div>
         <form action="{{ route('admin.posts.store') }}" method="POST">
             @csrf
             <div class="form-group">

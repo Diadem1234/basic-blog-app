@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">  
         <h1>{{ $post->title }}</h1>
+    </div>
         <p>{{ $post->body }}</p>
 
         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>

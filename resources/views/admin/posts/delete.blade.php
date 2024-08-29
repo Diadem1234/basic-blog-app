@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Are you sure you want to delete "{{ $post->title }}"?</h1>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1>Are you sure you want to delete "{{ $post->title }}"?</h1>
+        </div>
         <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
             @csrf
             @method('DELETE')

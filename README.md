@@ -67,3 +67,12 @@
 
 17. **Install mongodb extension using this command** \
     ``` composer require mongodb/laravel-mongodb```
+
+18. **Added default admin user upon migration** \
+    Using this email and password.\
+    ```
+    admin@blog.com
+    admin123
+    ```
+
+19. **Added Create, Read, Update & Delete functions in Users & Post controllers** 

@@ -22,18 +22,25 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'role' => 'required|string|in:' . implode(',', array_keys(config('enums.roles'))),
         ]);
+    
+        // Hash the password before storing
+        $validatedData['password'] = bcrypt($request->password);
     
         User::create($validatedData);
     
         return redirect()->route('admin.users.index')->with('success', 'User created successfully!');
     }
     
+    
 
     public function show(User $user)
     {
+        // dd($user);
         return view('admin.users.show', compact('user'));
     }
 
@@ -45,13 +52,24 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'role' => 'required',
         ]);
-
-        $user->update($request->all());
+    
+        $data = $request->only(['name', 'email', 'role']); // Only update these fields initially
+    
+        if ($request->filled('password')) {
+            if($request->password != $user->password){
+                $data['password'] = bcrypt($request->password);
+            }
+        }
+     
+        $user->update($data);
+    
         return redirect()->route('admin.users.index')->with('success', 'Updated successfully.');
     }
+    
     public function confirm_delete(User $user){
 
         return view('admin.users.delete', compact('user'));
