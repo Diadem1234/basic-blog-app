@@ -51,3 +51,19 @@
     'database'  => env('MONGODB_DATABASE'),
     ],
     ```
+13. **Setup laravel/ui and bootstrap for authentication using these commands** \
+    ```
+    composer require laravel/ui  \
+    php artisan ui bootstrap --auth
+    ```
+14. **Create a migration that will add role field in users table** \ 
+    ``` php artisan make:migration add_role_to_users --table=users ```
+    ``` php artisan migrate ```
+
+15. **Create Admin controllers for Users and Post**\
+    ``` php artisan make:controller Admin\UserController --resource ```\
+    ``` php artisan make:controller Admin\PostController --resource ```\
+16. **Add admin routes for Posts, Users resources in web.php**
+
+17. **Install mongodb extension using this command** \
+    ``` composer require mongodb/laravel-mongodb```
