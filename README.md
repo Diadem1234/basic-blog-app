@@ -19,18 +19,18 @@
 ### Installation
 1. **Clone the Repository**:
    git clone https://github.com/Diadem1234/basic-blog-app.git
-   cd your-repository
-2. **Create Laravel 11 Project**
-3. **Install dependencies**
-4. **Set up Environment Variables**
-5. **Create Post Controller, Model, Factory and Seeder**
+   cd basic-blog-app
+3. **Create Laravel 11 Project**
+4. **Install dependencies**
+5. **Set up Environment Variables**
+6. **Create Post Controller, Model, Factory and Seeder**
     ``` php artisan make:model Post --migration --controller --factory ```
-6. **Run Migrations and Seed database**
-7. **Create views for app layout, create, delete, edit, list and show post.**
+7. **Run Migrations and Seed database**
+8. **Create views for app layout, create, delete, edit, list and show post.**
      Create "Delete confirmation view"
-8. **Create Create, Read, Update & Delete functions for Post Controller.**
-9. **Add routes to web.php**
-10. **Run and test the application through http://127.0.0.1:8000**
+9. **Create Create, Read, Update & Delete functions for Post Controller.**
+10. **Add routes to web.php**
+11. **Run and test the application through http://127.0.0.1:8000**
     ``` php artisan serve ```
 
 ### Challenges
