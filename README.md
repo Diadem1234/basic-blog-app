@@ -32,6 +32,13 @@
 10. **Add routes to web.php**
 11. **Run and test the application through http://127.0.0.1:8000**
     ``` php artisan serve ```
+    **To setup and run the Laravel backend**
+    cd .\basic-blog-app\
+    ``` php artisan db:seed ```
+    ``` php artisan db:seed --class=PostSeeder ```
+    ``` php artisan serve ```
+    
+    
 
 ### Challenges
 1. **Connecting the project to MySQL database**
